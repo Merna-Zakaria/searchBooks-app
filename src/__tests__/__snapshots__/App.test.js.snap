@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`My first snapshot testing App 1`] = `
+<div
+  className="mb-5"
+>
+  <nav
+    className="navbar navbar-expand navbar-dark bg-primary"
+  >
+    <a
+      className="navbar-brand"
+      href="#home"
+    >
+      Navbar
+    </a>
+    <div
+      className="mr-auto navbar-nav"
+      onKeyDown={[Function]}
+    >
+      <a
+        aria-selected={false}
+        className="nav-link"
+        data-rb-event-key="#home"
+        href="#home"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Home
+      </a>
+      <a
+        aria-selected={false}
+        className="nav-link"
+        data-rb-event-key="#features"
+        href="#features"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Features
+      </a>
+      <a
+        aria-selected={false}
+        className="nav-link"
+        data-rb-event-key="#pricing"
+        href="#pricing"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="tab"
+        tabIndex={-1}
+      >
+        Pricing
+      </a>
+    </div>
+    <button
+      className="btn btn-outline-light"
+      disabled={false}
+      type="button"
+    >
+      Login
+    </button>
+  </nav>
+</div>
+`;

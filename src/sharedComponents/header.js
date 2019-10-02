@@ -14,7 +14,7 @@ class Header extends React.Component {
                     <Nav.Link href="#features">Features</Nav.Link>
                     <Nav.Link href="#pricing">Pricing</Nav.Link>
                 </Nav>
-                <Button variant="outline-light" onClick={this.onSubmit}>Login</Button>
+                <Button variant="outline-light">Login</Button>
             </Navbar>
             </div>
         )
