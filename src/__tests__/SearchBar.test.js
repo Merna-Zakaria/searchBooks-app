@@ -10,24 +10,27 @@ configure({ adapter: new Adapter() });
 
 
 
-describe('My second snapshot',()=>{
-it('renders the inner Counter', () => {
-  const wrapper = mount(<SearchBar />);
-  expect(wrapper.find(Counter).length).toEqual(1);
-});
-// it('passes all props to Counter', () => {
+// describe('My second snapshot',()=>{
+// it('renders the inner Counter', () => {
 //   const wrapper = mount(<SearchBar />);
-//   const counterWrapper = wrapper.find(Counter);
-//   expect(counterWrapper.find('p').text()).toEqual(1);
+//   expect(wrapper.find(Counter).length).toEqual(1);
 // });
-})
 
 
-const countProps = {
-  counter:10
-}
 
-const component = shallow(<Counter {...countProps} />)
+// // it('passes all props to Counter', () => {
+// //   const wrapper = mount(<SearchBar />);
+// //   const counterWrapper = wrapper.find(Counter);
+// //   expect(counterWrapper.find('p').text()).toEqual(1);
+// // });
+// })
+
+
+// const countProps = {
+//   counter:10
+// }
+
+// const component = shallow(<Counter {...countProps} />)
 
 
 
