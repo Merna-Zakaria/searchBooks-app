@@ -3,7 +3,9 @@ import {
     FETCH_SEARCH_RESULT
 } from '../actions/types';
 
-export default ( state = {}, action) => {
+export const initialState = {};
+
+export default ( state = initialState, action) => {
     switch (action.type) {
         case FETCH_SEARCH_RESULT :
             return { ...state, searchResult : action.payload };
