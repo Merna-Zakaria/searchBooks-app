@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`map state to props search component snapshot 1`] = `<searchResult />`;

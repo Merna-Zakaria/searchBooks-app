@@ -25,3 +25,4 @@ import renderer from 'react-test-renderer'
     expect(tree.toJSON()).toMatchSnapshot();
   })
 })
+
