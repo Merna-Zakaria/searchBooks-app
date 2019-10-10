@@ -1,27 +1,20 @@
 import React from "react";
-import SearchBar, { mapStateToProps } from "../sharedComponents/searchBar";
+import { mapStateToProps } from "../sharedComponents/searchBar";
 import { create } from "react-test-renderer";
 import { mount } from "enzyme";
 import { Provider } from "react-redux";
 import renderer from "react-test-renderer";
-import { createStore, applyMiddleware, compose } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
-import rootSaga from "../store/sagas/saga";
 import reducers from "../store/reducers/index";
-import "core-js/stable";
-import "regenerator-runtime/runtime";
+// import "core-js/stable";
+// import "regenerator-runtime/runtime";
 import App from "../App";
-import mockAxios from "axios";
-import api from "../store/apis/api";
-import { configure, shallow } from "enzyme";
+import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
 
-// const countProps = {
-//   counter:10
-// }
 
-// const component = shallow(<Counter {...countProps} />)
 
 describe("test form", () => {
   //     beforeEach( () => {
@@ -108,7 +101,7 @@ describe("test local state", () => {
     const store = createStore(reducers, applyMiddleware(sagaMiddleware));
 
     const component = mount(
-      <Provider store={store}>
+      <Provider store={store}>expect(wrapper.instance().state.searchBox).toBe("")
         <App />
       </Provider>
     );
@@ -119,52 +112,3 @@ describe("test local state", () => {
   });
 });
 
-// describe("<searchBar/>", () => {
-//   it("serchbar input should be found and have empty value", () => {
-//     const sagaMiddleware = createSagaMiddleware();
-
-//     const store = createStore(reducers, applyMiddleware(sagaMiddleware));
-
-//     const component = mount(
-//       <Provider store={store}>
-//         <App />
-//       </Provider>
-//     );
-//     // console.log(wrapper.debug());
-//     expect(component.find("#searchInput")).toHaveLength(1);
-//   });
-// });
-
-export default {
-  get: jest.fn(() => Promise.resolve({ data: {} }))
-};
-
-it("should call a fetchData function", done => {
-  // api
-  //   .fetchSearchResult(
-  //     `/https://www.googleapis.com/books/v1/volumes?q=${searchValue}`,
-  //     {}
-  //   )
-  const searchValue = "react";
-  const spy = jest.spyOn(api, "fetchSearchResult");
-  const hhh = api.fetchSearchResult(searchValue).then(res => {
-    expect(res).toEqual({
-      data: {}
-    });
-  });
-  expect(spy).toHaveBeenCalled();
-  expect(spy).toHaveBeenCalledTimes(1);
-  // expect(hhh).toBe(true);
-  // api.mockRestore();
-  // const hhh = api.fetchSearchResult(searchValue).then(response => {
-  //   expect(response).toEqual({
-  //     data: {}
-  //   });
-  // });
-  // expect(mockAxios.get).toHaveBeenCalledWith({
-  //   method: "get",
-  //   url: `/https://www.googleapis.com/books/v1/volumes?q=${searchValue}`
-  // });
-  // expect(consoleErrorSpy).not.toHaveBeenCalled();
-  done();
-});
