@@ -7,27 +7,23 @@ import renderer from "react-test-renderer";
 import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import reducers from "../store/reducers/index";
-// import "core-js/stable";
-// import "regenerator-runtime/runtime";
 import App from "../App";
-import { configure } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-configure({ adapter: new Adapter() });
+import {setupTests} from '../../src/setupTests';
 
 
 
 describe("test form", () => {
-  //     beforeEach( () => {
-  //     const sagaMiddleware = createSagaMiddleware();
+      beforeEach( () => {
+      const sagaMiddleware = createSagaMiddleware();
 
-  //     const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+      const store = createStore(reducers, applyMiddleware(sagaMiddleware));
 
-  //     const component = mount(
-  //       <Provider store={store}>
-  //         <App />
-  //       </Provider>
-  //     );
-  //   })
+      const component = mount(
+        <Provider store={store}>
+          <App />
+        </Provider>
+      );
+    })
   it("should create an entry in component state with the event value", () => {
     const sagaMiddleware = createSagaMiddleware();
 
@@ -112,3 +108,9 @@ describe("test local state", () => {
   });
 });
 
+
+
+plugins: [
+  ["@babel/plugin-proposal-class-properties"],
+  ["@babel/transform-runtime"]
+]
